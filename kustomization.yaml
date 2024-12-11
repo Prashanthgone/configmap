@@ -1,0 +1,10 @@
+resources:
+- new-deployment.yaml
+
+configMapGenerator:
+- name: new-config
+  literals:
+  - welcomeMessage=Welcome to pod 3
+
+generatorOptions:
+  disableNameSuffixHash: false
