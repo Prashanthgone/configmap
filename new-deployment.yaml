@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: new-app-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: new-app
+  template:
+    metadata:
+      labels:
+        app: new-app
+      annotations:
+        config-hash: "01fde8544e09cdc648e77821b828fa1cc7b916a4552dcb5190b50d79b1b074b1"
+    spec:
+      containers:
+      - name: nginx-container
+        image: nginx:latest
+        ports:
+        - containerPort: 80
+        env:
+          - name: WELCOME_MESSAGE
+            valueFrom:
+              configMapKeyRef:
+                name: new-config
+                key: welcomeMessage
