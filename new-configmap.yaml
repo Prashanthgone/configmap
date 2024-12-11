@@ -3,4 +3,4 @@ kind: ConfigMap
 metadata:
   name: new-config
 data:
-  welcomeMessage: "Welcome to pod 4"
+  welcomeMessage: "Welcome to pod 3"
