@@ -22,6 +22,6 @@ spec:
         - name: WELCOME_MESSAGE
           valueFrom:
             configMapKeyRef:
-              name: new-config # Reference without hash (Kustomize handles it)
+              name: new-config 
               key: welcomeMessage
 
