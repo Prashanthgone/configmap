@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: new-app-deployment
+  namespace: default
 spec:
   replicas: 1
   selector:
@@ -11,15 +12,16 @@ spec:
     metadata:
       labels:
         app: new-app
-  spec:
-    containers:
-    - name: nginx-container
-      image: nginx:latest
-      ports:
-      - containerPort: 80
-      env:
+    spec:
+      containers:
+      - name: nginx-container
+        image: nginx:latest
+        ports:
+        - containerPort: 80
+        env:
         - name: WELCOME_MESSAGE
           valueFrom:
             configMapKeyRef:
-              name: new-config
+              name: new-config # Reference without hash (Kustomize handles it)
               key: welcomeMessage
+
