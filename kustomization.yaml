@@ -4,7 +4,7 @@ resources:
 configMapGenerator:
 - name: new-config
   literals:
-  - welcomeMessage=Welcome to pod 4
+  - welcomeMessage=Welcome to pod 5
 
 generatorOptions:
   disableNameSuffixHash: false
