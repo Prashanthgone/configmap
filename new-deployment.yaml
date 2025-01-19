@@ -22,6 +22,15 @@ spec:
         - name: WELCOME_MESSAGE
           valueFrom:
             configMapKeyRef:
-              name: new-config 
+              name: new-config
               key: welcomeMessage
-
+        - name: USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: new-secret
+              key: username
+        - name: PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: new-secret
+              key: password
