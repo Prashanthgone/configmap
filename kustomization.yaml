@@ -4,13 +4,13 @@ resources:
 configMapGenerator:
 - name: new-config
   literals:
-  - welcomeMessage=Welcome to pod 4
+  - welcomeMessage=Welcome to pod 5
 
 secretGenerator:
 - name: new-secret
   literals:
   - username=admin
-  - password=password@123
+  - password=password@121
 
 generatorOptions:
   disableNameSuffixHash: false
